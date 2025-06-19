@@ -1,8 +1,8 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  base: '/lab12/', 
+  base: '/',
   build: {
-    outDir: 'docs' 
+    outDir: 'dist'
   }
 });
