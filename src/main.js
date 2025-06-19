@@ -1,8 +1,9 @@
-import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
-import { format } from 'https://cdn.skypack.dev/date-fns';
+import { createClient } from '@supabase/supabase-js';
+import { format } from 'date-fns';
+import './style.css';
 
 const supabase = createClient(
-  'https://sueahkavaigvtwqamnxm.supabase.co', 
+  'https://sueahkavaigvtwqamnxm.supabase.co',
   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InN1ZWFoa2F2YWlndnR3cWFtbnhtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDg4MDQ5NTYsImV4cCI6MjA2NDM4MDk1Nn0.6zkizLKYR_58MtXeMiILpAAEDWm2KkkIAnyuPsqcIws'
 );
 
@@ -56,8 +57,8 @@ document.getElementById('article-form').addEventListener('submit', async (e) => 
   const { error } = await supabase.from('article').insert([article]);
 
   if (error) {
-  alert('Błąd!');
-  console.error("Błąd Supabase:", error.message, error.details);
+    alert('Błąd!');
+    console.error("Błąd Supabase:", error.message, error.details);
   } else {
     alert('Dodano!');
     form.reset();
